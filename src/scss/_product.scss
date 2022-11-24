@@ -1,0 +1,84 @@
+.section {
+  &__product {
+    position: relative;
+    background: url("../img/product/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include md {
+      background-size: cover;
+      background-position: -320px;
+    }
+    @include sm {
+      background-position: -130px;
+      background-size: unset;
+    }
+  }
+}
+
+.product {
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    @include md {
+      flex-wrap: wrap;
+    }
+    @include xs {
+      gap: 25px;
+    }
+  }
+
+  &__item {
+    padding: 144px 0px;
+    max-width: 352px;
+    @include md {
+      &:first-child {
+        padding: 96px 0px 0px 0px;
+      }
+      &:last-child {
+        padding: 0px 0px 96px 0px;
+      }
+    }
+    @include xs {
+      &:first-child {
+        padding: 35px 0px 0px 0px;
+      }
+      &:last-child {
+        padding: 0px 0px 35px 0px;
+      }
+    }
+  }
+
+  &__column {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    @include md {
+      flex-direction: row-reverse;
+    }
+    &.column-reverse {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    &:not(:last-child) {
+      margin-bottom: 48px;
+      @include xs {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  &__title {
+    line-height: 150%;
+    color: $secondary;
+    text-align: right;
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    line-height: 200%;
+    text-align: right;
+    color: $secondary;
+  }
+}

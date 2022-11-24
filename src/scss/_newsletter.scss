@@ -1,0 +1,53 @@
+.section {
+  &__newsletter {
+    background-color: #111111;
+    padding: 96px 0px;
+    @include xs {
+      padding: 35px 0px;
+    }
+  }
+}
+
+.newsletter {
+  &__container {
+    max-width: 474px;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    @include xs {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  }
+
+  &__form-input {
+    flex: 0 1 100%;
+    background-color: transparent;
+    border: 1px solid $primary;
+    padding-left: 24px;
+    color: $primary;
+    &::placeholder {
+      line-height: 300%;
+      color: $primary;
+    }
+    outline: none;
+    &:hover {
+      background-color: #ffffff1f;
+    }
+    @include xs {
+      flex: 1 1 100%;
+      min-height: 48px;
+    }
+  }
+
+  &__form-button {
+    padding: 0px 41px;
+    background-color: transparent;
+    @include xs {
+      flex: 1 1 100%;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.saection {
+  &__news {
+    padding: 96px 0px;
+    @include xs {
+      padding: 35px 0px;
+    }
+  }
+}
+.news {
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    @include md {
+      flex-direction: column;
+    }
+  }
+
+  &__column {
+    max-width: 352px;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 1150px) {
+      max-width: 300px;
+    }
+    @include lg {
+      max-width: 230px;
+    }
+    @include md {
+      max-width: 100%;
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__picture {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__image {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    color: $secondary;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__subtitle {
+    line-height: 150%;
+    color: $secondary;
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__link {
+    font-size: 12px;
+    line-height: 24px;
+    color: $secondary;
+    padding-left: 20px;
+    position: relative;
+    transition: 0.3s ease;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 1px;
+      background-color: $secondary;
+      top: 50%;
+      left: 6px;
+      transform: translate(-50%, -50%);
+      transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    &:hover::before {
+      left: 11px;
+    }
+    &:hover {
+      font-weight: 700;
+    }
+  }
+}

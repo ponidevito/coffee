@@ -1,0 +1,60 @@
+.section {
+  &__location {
+    background-image: url("../img/locations/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 96px 0px;
+    @include xs {
+      padding: 35px 0px;
+    }
+  }
+}
+.location {
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    @include md {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 33%;
+    max-width: 256px;
+    @include md {
+      margin-bottom: 48px;
+    }
+    @include xs {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 200%;
+    color: $primary;
+    text-align: center;
+  }
+
+  &__time {
+    line-height: 150%;
+    text-align: center;
+    color: $primary;
+  }
+  &__street {
+    line-height: 150%;
+    text-align: center;
+    color: $primary;
+  }
+}
